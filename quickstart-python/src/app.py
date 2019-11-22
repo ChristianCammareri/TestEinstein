@@ -25,7 +25,7 @@ def main():
         # Obtain oauth token
         token = token_generator.generate_token(assertion)
         response = token.json()
-
+        print(response)
         # If there is no token print the response
         if 'access_token' not in response:
             raise ValueError("Access token generation failed. Received reply: \"{}\"".format(response))
