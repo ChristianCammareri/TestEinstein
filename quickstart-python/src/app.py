@@ -12,7 +12,7 @@ import token_generator
 def main():
    
     try:
-        print "Hello"
+        print ("Hello")
         # Read account id and private from environment variables
         account_id = os.environ['EINSTEIN_VISION_ACCOUNT_ID']
         private_key = os.environ['EINSTEIN_VISION_PRIVATE_KEY'].decode('string_escape')
@@ -22,10 +22,9 @@ def main():
 
         # Generate an assertion using RSA private key
         assertion = jwt_helper.generate_assertion(account_id, private_key, expiry)
-        print "Ciao"
         # Obtain oauth token
         token = token_generator.generate_token(assertion)
-        print "CC"
+        print ("CC")
         response = token.json()
         print(response)
         # If there is no token print the response
